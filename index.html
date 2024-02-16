@@ -203,7 +203,7 @@
     <!-- embed/seo -->
     <meta name="keywords" content="focat, focat's website, focat's portfolio, focat's portfolio website">
     <meta name="robots" content="index, follow">
-    
+
     <meta name="og:author" content="focat 我爱自">
     <meta name="og:theme-color" content="#1a1a1e">
     <meta property="og:type" content="website">
@@ -257,13 +257,13 @@
     <!-- <script src="sparkle.js"></script> very annoying -->
     <script>
         // stop selection, rightclick, and inspect element keys
-        // document.oncontextmenu = function() {return false;};
-        // document.onkeydown = function(e) {
-        //     if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 123)) {
-        //         return false;
-        //     }
-        // };
-        // document.onselectstart = function() {return false;};
+        document.oncontextmenu = function() {return false;};
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 123)) {
+                return false;
+            }
+        };
+        document.onselectstart = function() {return false;};
 
         $(document).ready(function() {
             $('.overlay').click(function() {
