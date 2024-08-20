@@ -222,7 +222,7 @@
             <canvas id="wave" class="wavecanvas"></canvas>
             <div class="center-box-content">
                 <!-- <img class="avatar" src="https://cdn.discordapp.com/attachments/1169494615737516112/1207828874168242297/meow.png?ex=65e1114b&is=65ce9c4b&hm=0f8b35e047299aabce677a5ea383156432250a7cd16e66061811a518b5723cea&" alt="avatar" /> -->
-                <img class="avatar" src="dancing-cat.gif" alt="avatar" />
+                <img class="avatar" src="pfp.jpg" alt="avatar" />
                 <div class="username">focat</div>
                 <div class="description">Programmer & UI/UX Designer</div>
                 <a href="https://discord.com/users/676960182621962271" class="btn">Get in touch</a>
@@ -272,7 +272,8 @@
 
                 $(this).fadeOut(500);
 
-                const possibleSongs = ["Already Rich.mp3", "A2Z.mp3", "pain1993.mp3", "Jay Hound x Jay5ive - AFRICA.mp3"];
+                //const possibleSongs = ["Already Rich.mp3", "A2Z.mp3", "pain1993.mp3", "Jay Hound x Jay5ive - AFRICA.mp3"];
+		const possibleSongs = ["Jus' Know.mp3", "1 thing - jersey club remix.mp3", "fuckit.mp3", "Michigan.mp3"];
                 const song = possibleSongs[Math.floor(Math.random() * possibleSongs.length)];
                 $('#songname').html(`Playing <b>${song.replace('.mp3', '')}</b>`);
 
