@@ -22,15 +22,30 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp8017938.jpg&f=1&nofb=1&ipt=de17edbfa36f76929ee69be479e4180b062173b833fea1e373861c9f11762893&ipo=images') no-repeat center fixed;
+            /* background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp8017938.jpg&f=1&nofb=1&ipt=de17edbfa36f76929ee69be479e4180b062173b833fea1e373861c9f11762893&ipo=images') no-repeat center fixed; */
+            background: url('new bg.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
             overflow-y: hidden;
         }
+        .background-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            z-index: -1;
+        }
+        
         .center {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
+            justify-content: center;
         }
+        
         .center-box {
             position: relative;
             padding: 20px;
@@ -38,6 +53,7 @@
             width: 700px;
             max-width: 100%;
         }
+        
         .center-box::before {
             content: "";
             position: absolute;
@@ -47,14 +63,23 @@
             left: 0;
             background-color: #1a1a1e;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            /* blur */
-            -webkit-filter: blur(1px);
-            filter: blur(1px);
             z-index: -1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+        
         .center-box-content {
             position: relative;
+        }
+        
+        .music-control-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a1a1e;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
         }
 
         .avatar {
@@ -107,7 +132,7 @@
         }
         .btn:hover {
             border: 1px solid #727272;
-            padding-right: 40px;
+            padding-right: 30px;
         }
 
         .btn::after {
@@ -116,7 +141,7 @@
             opacity: 0;
             transition: all .3s;
             line-height: 1;
-            right: 24px;
+            right: 20px;
         }
         .btn:hover::after {
             opacity: 1;
@@ -127,7 +152,7 @@
             margin-top: 20px;
             padding: 0;
             border: 1px solid #5f5f5f;
-            border-radius: 50%; /* Make the button a circle */
+            border-radius: 50%;
             background-color: transparent;
             color: rgb(226, 226, 226);
             font-size: 16px;
@@ -198,6 +223,23 @@
             color: rgb(172, 172, 172);
             text-align: right;
         }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            margin: 10px;
+            font-size: 12px;
+            color: #fff;
+            border: 1px solid #181818;
+
+            border-radius: 5px;
+            padding: 5px 10px;
+
+            /* glassmorphism */
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* for apple users */
+        }
     </style>
 
     <!-- embed/seo -->
@@ -209,10 +251,11 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://focat.me">
     <meta property="og:title" content="focat">
-    <meta property="og:description" content="I am a passionate programmer, UI/UX designer and gamer. DM me on Discord for any inquiries/commissions.">
-    <meta property="og:image" content="pfp.jpg">
+    <meta property="og:description" content="Programmer & UI/UX Designer - Passionate Reverse Engineering learner || DM me on Discord (@focat) for any inquiries or commissions.">
+    <meta property="og:image" content="new pfp.png">
 </head>
 <body>
+    <div class="background-blur"></div>
     <div class="overlay">
         <p>click to enter</p>
     </div>
@@ -222,9 +265,10 @@
             <canvas id="wave" class="wavecanvas"></canvas>
             <div class="center-box-content">
                 <!-- <img class="avatar" src="https://cdn.discordapp.com/attachments/1169494615737516112/1207828874168242297/meow.png?ex=65e1114b&is=65ce9c4b&hm=0f8b35e047299aabce677a5ea383156432250a7cd16e66061811a518b5723cea&" alt="avatar" /> -->
-                <img class="avatar" src="pfp.jpg" alt="avatar" />
+                <img class="avatar" src="new pfp.png" alt="avatar" />
                 <div class="username">focat</div>
-                <div class="description">Programmer & UI/UX Designer - Passionate Reverse Engineering learner</div>
+                <!--- im sorry im too lazy had to use <br> :p -->
+                <div class="description">Programmer & UI/UX Designer - Passionate Reverse Engineering learner<br>DM me on Discord (@focat) for any inquiries or commissions.</div>
                 <a href="https://discord.com/users/676960182621962271" class="btn">Get in touch</a>
                 <br>
                 <a href="https://discord.com/users/676960182621962271" class="social-btn" target="_blank">
@@ -245,13 +289,20 @@
                         <g fill="#5f5f5f" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.09,5.09)"><path d="M12.125,1.99805c-0.43898,0.01834 -0.81457,0.32104 -0.92578,0.74609l-9.16602,34.83203c-0.06779,0.25668 -0.03074,0.52977 0.10298,0.75911c0.13372,0.22934 0.35314,0.3961 0.60991,0.46354l34.83398,9.16797c0.25668,0.06779 0.52977,0.03074 0.75911,-0.10298c0.22934,-0.13372 0.3961,-0.35314 0.46354,-0.60991l9.16602,-34.83398c0.06779,-0.25668 0.03074,-0.52977 -0.10298,-0.75911c-0.13372,-0.22934 -0.35314,-0.3961 -0.60991,-0.46354l-34.83398,-9.16602c-0.09674,-0.02587 -0.19681,-0.03706 -0.29687,-0.0332zM21.5,19l9.5,2.5l-2.5,9.5l-9.5,-2.5z"></path></g></g>
                     </svg>
                 </a>
-                <a href="https://namemc.com/profile/l2ck.2" class="social-btn" target="_blank">
+                <a href="https://namemc.com/profile/rqcq.1" class="social-btn" target="_blank">
                     <img id="svg" src="namemc.png" />
                 </a>
                 <!--       -->
                 <p class="song_name" id="songname">Playing <b>...</b></p>
             </div>
         </div>
+        <!-- <div class="music-control-box">
+            <p style="color: #fff;">To-do: Music Controls</p>
+        </div> -->
+
+        <footer>
+            Want to copy this page for yourself? Fork the GitHub Repo <a href="https://github.com/focat69/focat69.github.io" style="color: #df4035;">here</a> 💖
+        </footer>
     </div>
 
     <!-- <script src="sparkle.js"></script> very annoying -->
@@ -272,8 +323,7 @@
 
                 $(this).fadeOut(500);
 
-                //const possibleSongs = ["Already Rich.mp3", "A2Z.mp3", "pain1993.mp3", "Jay Hound x Jay5ive - AFRICA.mp3"];
-		const possibleSongs = ["Jus' Know.mp3", "1 thing - jersey club remix.mp3", "fuckit.mp3", "Michigan.mp3"];
+		        const possibleSongs = ["Two Freaky Hoes.mp3", "Stereo Love.mp3", "Morning Sex.mp3"];
                 const song = possibleSongs[Math.floor(Math.random() * possibleSongs.length)];
                 $('#songname').html(`Playing <b>${song.replace('.mp3', '')}</b>`);
 
